@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<style>
+		#container {
+			width:960px;
+			margin:0 auto;
+			text-align:center;
+		}
+		.tab {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+
+		}
+		/* Float the list items side by side */
+		.tab li {
+			float: left;
+		}
+		/* Style the links inside the list items */
+		.tab li a {
+			display: inline-block;
+			color: #000;
+			text-align: center;
+			text-decoration: none;
+			padding: 14px 16px;
+			font-size: 17px;
+			transition:0.3s;
+		}
+		/* Style the tab content */
+		.tabcontent {
+			display: none;
+			background-color:rgb(0,0,0);
+			padding: 6px 12px;
+			color:#fff;
+			height:650px; widget:600px; border: 1px solid black;
+		}
+		ul.tab li.current{
+			background-color: rgb(0,154,200);
+			color: #222;
+		}
+		.tabcontent.current {
+			display: block;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://fonts.googleapis.com/css?family=David+Libre|Hind:400,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+  	
+	<title>행동요령</title>
+</head>
+<body>
+<header class="cd-auto-hide-header">
+	<div class="logo"><a href="메인.html"><img src="img/cd-logo.svg" width="150"alt="Logo"></a></div>
+
+	<nav class="cd-primary-nav">
+		<a href="#cd-navigation" class="nav-trigger">
+			<span>
+				<em aria-hidden="true"></em>
+				Menu
+			</span>
+		</a> <!-- .nav-trigger -->
+
+		<ul id="cd-navigation">
+			<li><a href="지진대피경로.html">지진대피경로</a></li>
+			<li><a href="행동요령.html">행동요령</a></li>
+			<li><a href="고객지원.html">고객지원</a></li>
+		</ul>
+	</nav> <!-- .cd-primary-nav -->
+
+	<nav class="cd-secondary-nav">
+		<ul>
+			<li><a href="행동요령.html">지진행동요령 동영상</a></li>
+			<li><a class="active" href="#0">지진 단계별 요령</a></li>
+		</ul>
+	</nav> <!-- .cd-secondary-nav -->
+</header> <!-- .cd-auto-hide-header -->
+
+<main class="cd-main-content sub-nav">
+	<div id="container">
+		<p></p>
+		<ul class="tab">
+			<li class="current" data-tab="tab1"><a href="#">지진 국민행동요령</a></li>
+			<li data-tab="tab2"><a href="#">사전체크리스트</a></li>
+			<li data-tab="tab3"><a href="#">상황별 장소별</a></li>
+			
+		</ul>
+
+		<div id="tab1" class="tabcontent current">
+			<iframe style="width:100%;height:100%;" 
+				src="./지진 국민행동요령.pdf">
+			</iframe>
+		</div>
+
+		<div id="tab2" class="tabcontent">
+			<iframe style="width:100%;height:100%;" 
+				src="./사전체크리스트.pdf">
+			</iframe>
+		</div>
+
+		<div id="tab3" class="tabcontent">
+			<iframe style="width:100%;height:100%;" 
+				src="./상황별 장소별.pdf">
+			</iframe>
+		</div>
+		
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script>
+	if( !window.jQuery ) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
+	</script>
+	<script src="js/main.js"></script>
+	<script>
+		$(function() {
+			$('ul.tab li').click(function() {
+				var activeTab = $(this).attr('data-tab');
+				$('ul.tab li').removeClass('current');
+				$('.tabcontent').removeClass('current');
+				$(this).addClass('current');
+				$('#' + activeTab).addClass('current');
+			})
+		});
+	</script>
+</main>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+	if( !window.jQuery ) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
+</script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
